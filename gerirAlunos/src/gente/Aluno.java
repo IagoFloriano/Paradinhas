@@ -9,15 +9,23 @@ public class Aluno extends Pessoa{
     this.grr = grr;
   }
 
+  public void show(){
+    super.show();
+    System.out.println("GRR: " + this.grr);
+  }
+
+  @Override
+  public String toString(){
+    return super.toString() + " GRR" + this.grr;
+  }
+
   //getters
-  public String getGrr()
-  {
+  public String getGrr(){
       return this.grr;
   }
 
   //setters
-  public void setGrr(String  grr)
-  {
+  public void setGrr(String  grr){
       this.grr=grr;
   }
 }
