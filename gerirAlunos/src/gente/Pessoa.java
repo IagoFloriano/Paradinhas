@@ -22,6 +22,9 @@ public class Pessoa implements Serializable{
     return this.nome + " " + this.email;
   }
 
+  public boolean equals(Pessoa p){
+    return this.nome.equals(p.getNome()) && this.email.equals(p.getEmail());
+  }
   //getters
   public String getEmail(){
       return this.email;

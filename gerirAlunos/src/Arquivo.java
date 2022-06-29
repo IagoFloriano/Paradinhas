@@ -1,6 +1,6 @@
-package gente;
 import java.io.*;
 import java.util.Vector;
+import gente.Aluno;
 
 public class Arquivo{
   private String path;

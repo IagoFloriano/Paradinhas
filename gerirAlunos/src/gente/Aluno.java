@@ -16,7 +16,11 @@ public class Aluno extends Pessoa{
 
   @Override
   public String toString(){
-    return super.toString() + " GRR" + this.grr;
+    return super.toString() + " GRR:" + this.grr;
+  }
+
+  public boolean equals(Aluno a){
+    return super.equals(a) && this.grr.equals(a.getGrr());
   }
 
   //getters
