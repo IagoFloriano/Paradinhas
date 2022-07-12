@@ -57,6 +57,9 @@ public class Lista<T extends Serializable>{
   }
 
   public void fromVector(Vector<T> v){
+    this.primeiro = null;
+    this.ultimo = null;
+    this.tam = 0;
     for(T e:v){
       this.insere(e);
     }
