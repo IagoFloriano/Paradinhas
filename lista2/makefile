@@ -1,8 +1,8 @@
 JC =javac -d bin -cp bin -Xlint
 RUN = java -cp bin
 .SUFFIXES:.java .class
-MAINFILE = src/Main.java src/Arquivo.java src/CadastraAluno.java
-TORUN = bin/Main.class
+MAINFILE = src/GUI.java src/Main.java src/Arquivo.java src/CadastraAluno.java
+TORUN = bin/GUI.class
 
 PACKAGES = gente list
 
@@ -17,7 +17,7 @@ list:
 	$(JC) src/list/*
 
 run: 
-	$(RUN) Main
+	$(RUN) GUI
 
 clean:
 	rm -rf ./bin/*
