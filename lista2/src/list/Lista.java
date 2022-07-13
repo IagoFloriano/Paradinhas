@@ -45,11 +45,20 @@ public class Lista<T extends Serializable>{
     System.out.print("\n");
   }
 
+  public void print(String before){
+    No temp = this.primeiro.getProx();
+    System.out.print(this.primeiro);
+    while(temp!=null){
+      System.out.print(before + temp);
+      temp = temp.getProx();
+    }
+    System.out.print("\n");
+  }
+
   public Vector<T> toVector(){
     Vector<T> r = new Vector<T>();
     No temp = this.primeiro;
     while(temp != null){
-      System.out.println(temp);
       r.add(temp.getElem());
       temp = temp.getProx();
     }

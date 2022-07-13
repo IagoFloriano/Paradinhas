@@ -39,7 +39,6 @@ public class Arquivo{
         alunos.add(a);
       } while (a != null); 
       alunos.remove(alunos.size()-1);
-      System.out.println(alunos.size());
       in.close();
       return alunos;
 
