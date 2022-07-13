@@ -33,15 +33,17 @@ public class GUI extends JFrame implements ActionListener{
   }
 
   public void actionPerformed(ActionEvent e){
-    if(e.getSource() == B1)
+    if(e.getSource() == B1){
       System.out.println("voce pressionou B1"+T1.getText());
-    if(e.getSource() == B2)
+    }
+    if(e.getSource() == B2){
       System.out.println("voce pressionou B2"+T2.getText());
+    }
   }
 
   public static void main(String[] args){
     JFrame janela = new GUI();
-    janela.show();
+    janela.setVisible(true);
     WindowListener x = new WindowAdapter(){
       public void windowClosing(WindowEvent e){
         System.exit(0);

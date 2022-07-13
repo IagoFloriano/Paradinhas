@@ -19,5 +19,8 @@ list:
 run: 
 	$(RUN) GUI
 
+GUI: src/GUI.java
+	$(JC) $^
+
 clean:
 	rm -rf ./bin/*
