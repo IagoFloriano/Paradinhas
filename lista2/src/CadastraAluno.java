@@ -8,9 +8,10 @@ public class CadastraAluno extends Lista<Aluno>{
   private String filepath;
   private Vector<Aluno> buffer;
   private boolean bufferSynced;
+  private ListaDeAluno lista;
 
   public CadastraAluno(){
-    super();
+    lista = ListaDeAluno.getInstance();
     this.file = null;
     this.filepath = null;
     this.buffer = null;
@@ -18,7 +19,7 @@ public class CadastraAluno extends Lista<Aluno>{
   }
 
   public CadastraAluno(String filepath){
-    super();
+    lista = ListaDeAluno.getInstance();
     this.filepath = filepath;
     this.file = new Arquivo(filepath);
     this.buffer = null;
@@ -56,6 +57,13 @@ public class CadastraAluno extends Lista<Aluno>{
     Aluno a = new Aluno(nome, email, grr);
     super.insere(a);
     this.bufferSynced = false;
+  }
+
+  public void imprime(){
+    Lista<Aluno> it = lista.Iterator();
+    while(it.hasNext()){
+      System.out.println(it.next());
+    }
   }
 
   @Override

@@ -6,19 +6,13 @@ import list.Lista;
 public class Main{
   public static void main(String[] args){
     CadastraAluno teste = new CadastraAluno("arq.arq");
-    //teste.insereAluno("Aluno 1", "Email 1", "grr 1");
-    //teste.insereAluno("Aluno 2", "Email 2", "grr 2");
-    //teste.insereAluno("Aluno 3", "Email 3", "grr 3");
-    //teste.insereAluno("Aluno 4", "Email 4", "grr 4");
-    //teste.insereAluno("Aluno 5", "Email 5", "grr 5");
-    //teste.insereAluno("Aluno 6", "Email 6", "grr 6");
+    teste.insereAluno("Nome1", "Email1", "1");
+    teste.insereAluno("Nome2", "Email2", "2");
+    teste.insereAluno("Nome3", "Email3", "3");
+    teste.insereAluno("Nome4", "Email4", "4");
+    teste.insereAluno("Nome5", "Email5", "5");
+    teste.insereAluno("Nome6", "Email6", "6");
 
-    //System.out.println("Imprimir Lista ------------------");
-    //teste.print("\n");
-    //teste.gravaAlunos();
-
-    teste.leAlunos();
-    System.out.println("Imprimir Lista ------------------");
-    teste.print("\n");
+    teste.imprime();
   }
 }

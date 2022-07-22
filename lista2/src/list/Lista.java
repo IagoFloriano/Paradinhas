@@ -2,15 +2,22 @@ package list;
 import java.io.*;
 import java.util.*;
 
-public class Lista<T extends Serializable>{
+interface Iterator<T>{
+  boolean hasNext();
+  T next();
+}
+
+public class Lista<T extends Serializable> implements Iterator<T>{
   private No primeiro;
   private No ultimo;
   private int tam;
+  private No atual;
 
   public Lista(){
     this.primeiro = null;
     this.ultimo = null;
     this.tam = 0;
+    this.atual = null;
   }
   
   public boolean vazia(){return this.tam==0;}
@@ -72,6 +79,23 @@ public class Lista<T extends Serializable>{
     for(T e:v){
       this.insere(e);
     }
+  }
+
+  public boolean hasNext(){
+    if(this.atual == null) return false;
+    return true;
+  }
+  
+  public T next(){
+    if(this.atual == null) return null;
+    No aux = atual;
+    this.atual = aux.getProx();
+    return aux.getElem();
+  }
+  
+  public Lista<T> Iterator(){
+    this.atual = this.primeiro;
+    return this;
   }
 
   private class No{
