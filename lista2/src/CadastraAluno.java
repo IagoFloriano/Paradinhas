@@ -56,6 +56,7 @@ public class CadastraAluno extends Lista<Aluno>{
   public void insereAluno(String nome, String email, String grr){
     Aluno a = new Aluno(nome, email, grr);
     super.insere(a);
+    lista.insere(a);
     this.bufferSynced = false;
   }
 
