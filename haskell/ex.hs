@@ -31,3 +31,7 @@ multipRec :: Integer -> Integer -> Integer
 multipRec _ 0 = 0
 multipRec 0 _ = 0
 multipRec n1 n2 = n1 + (multipRec n1 (n2-1))
+
+printNaturais :: Integer -> String
+printNaturais 0 = "0 "
+printNaturais n = printNaturais (n-1) ++ (show n) ++ " "
