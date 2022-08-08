@@ -76,6 +76,42 @@ superFatorial :: Integer -> Integer
 superFatorial n | n <= 1 = 1
 superFatorial n = (fatorial n) * superFatorial(n-1)
 
+--ex 13
+menorVetor :: [Integer] -> Integer
+menorVetor [] = 0
+menorVetor [n] = n
+menorVetor (x:xs)
+  | x < menorVetor xs = x
+  | otherwise = menorVetor xs
+
+--ex 14
+imprimeSerie :: Integer -> Integer -> Integer -> String
+imprimeSerie _ _ 0 = ""
+imprimeSerie i j _ | i > j = ""
+imprimeSerie i j k | i + k >= j = show i --ultimo numero nao ter \n
+imprimeSerie i j k = show i ++ "\n" ++ (imprimeSerie newi j k)
+  where
+  newi = i + k
+
+--ex 15
+binario :: Integer -> String
+binario x
+  | x < 2     = j
+  | otherwise = j ++ (binario (div x 2))
+  where
+  j = show $ mod (x+1) 2
+
+--ex 16
+somaRec :: Integer -> Integer -> Integer
+somaRec x 0 = x
+somaRec 0 x = x
+somaRec x y = somaRec x (y-1) + 1
+
+--ex 17
+somaDig :: Integer -> Integer
+somaDig n | n < 10 = n
+somaDig n = (mod n 10) + somaDig (div n 10)
+
 main = do
   putStrLn "------------------\nComeço do programa\n"
-  putStrLn $ show $ superFatorial 4
+  putStrLn $ show $ somaDig 123
