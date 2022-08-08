@@ -3,5 +3,5 @@ bin
 .classpath
 .project
 .settings
-.hi
-.o
+*.hi
+*.o
