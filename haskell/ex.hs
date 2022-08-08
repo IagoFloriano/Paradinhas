@@ -1,12 +1,13 @@
 import System.IO
 
 -- ex 1
+casas :: Integer -> Integer
+casas = floor . logBase 10 . fromInteger
+
 inverte :: Integer -> Integer
 inverte x
   | x < 10 = x
-  | otherwise = (10 ^ casas) * mod x 10 + inverte (div x 10)
-  where
-    casas = floor (logBase 10 (fromInteger x))
+  | otherwise = (10 ^ casas x) * mod x 10 + inverte (div x 10)
 
 -- ex 2
 somaVetor :: [Integer] -> Integer
@@ -116,6 +117,7 @@ somaDig n
   | n < 10 = n
   | otherwise = (mod n 10) + somaDig (div n 10)
 
+main :: IO ()
 main = do
   putStrLn "------------------\nComeço do programa\n"
   putStrLn $ show $ somaDig 123
