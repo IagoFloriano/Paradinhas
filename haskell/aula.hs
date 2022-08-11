@@ -35,3 +35,18 @@ isPalindrome [] = True
 isPalindrome [x] = True
 isPalindrome [x, y] = x == y
 isPalindrome arr = and [head arr == last arr, isPalindrome $ tail $ init arr]
+
+compress :: Eq a => [a] -> [a]
+compress [] = []
+compress [x] = [x]
+compress (a:xs)
+  | a == head xs = compress xs
+  | otherwise = a : compress xs
+
+pack :: Eq a => [a] -> [[a]]
+pack [] = []
+pack (x:xs) = (x : takeWhile (== x) xs) : pack (dropWhile (== x) xs)
+
+encode :: Eq a => [a] -> [(Int, a)]
+encode [] = []
+encode arr = map (\x -> (length x, head x)) (pack arr)
