@@ -1,4 +1,4 @@
-CC = ghc --make
+CC = ghc --make -static 
 PGM = ex
 
 all: $(PGM)
