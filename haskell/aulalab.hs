@@ -33,9 +33,15 @@ removeDups [] = []
 removeDups (x:xs) = x : removeDups (dropWhile (==x) xs)
 
 divide ::  Int -> [b] -> ([b],[b])
-divide n arr
+divide 0 arr = ([], arr)
+divide n arr = (first : x, y)
+  where
+    first = head arr
+    (x,y) = divide (n-1) $ tail arr
+{-divide n arr
   | n > length(arr) = error "Nao da pra fazer"
   | otherwise = (take n arr, drop n arr)
+  -}
 
 intervalo :: Int -> Int -> [b] -> [b]
 intervalo i k arr
